@@ -1,6 +1,6 @@
 
 import java.io.*;
-class OutputStream
+class OutputStreamDemo
 {
 	public static void main(String[] args) throws IOException
 	{
