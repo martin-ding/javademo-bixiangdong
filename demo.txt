@@ -1,0 +1,3 @@
+/Applications/AMPPS/www/test/java_dir/Demo.java
+/Applications/AMPPS/www/test/java_dir/FileDemo.java
+/Applications/AMPPS/www/test/java_dir/test/Demo.java/Demo.java
