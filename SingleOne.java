@@ -1,0 +1,5 @@
+class SingleOne extends SingleDemo
+{
+    
+
+}
