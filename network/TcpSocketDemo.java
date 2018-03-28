@@ -22,15 +22,15 @@ class TcpClient implements Runnable {
         try {
             Socket s = new Socket(InetAddress.getByName("10.128.37.38"),3002);
 
-            /*输出流*/
+            /*键盘输入流*/
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String str = "";
 
-            /*读取输入流*/
+            /*读取Server 返回的输入流*/
             BufferedReader bfr = new BufferedReader(new InputStreamReader(s.getInputStream()));
+            PrintWriter pr = new PrintWriter(s.getOutputStream(),true);//发送数据的stream
             String rebackstr = null;
             while (!"over".equals(str = reader.readLine())) {
-                PrintWriter pr = new PrintWriter(s.getOutputStream(),true);//发送数据的stream
                 pr.println(str); 
                 rebackstr = bfr.readLine(); //阻塞方法
                 System.out.println("从socket服务器端回来的信息  "+ rebackstr);
