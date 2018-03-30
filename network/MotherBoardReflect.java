@@ -30,11 +30,15 @@ class MotherBoardReflect
     /*运行*/
     public void run()
     {
-       try {
-            File f = new File("network/pci.properties");
+        File f = null;
+        FileReader fr = null;
+        try {
+            f = new File("network/pci.properties");
+            
             if(f.exists()){
                 Properties prop = new Properties();
-                prop.load(new FileReader(f));
+                fr =  new FileReader(f);
+                prop.load(fr);
                 Set <String> hs = prop.stringPropertyNames();
                 Iterator<String> it = hs.iterator();
                 while (it.hasNext())
@@ -49,6 +53,13 @@ class MotherBoardReflect
         } catch(Exception e) {
             System.out.println("出现错误了");
             e.printStackTrace();
+        } finally {
+            try {
+                if (fr != null)
+                fr.close();
+            } catch (IOException e) {
+                
+            }
         }
     }
 
